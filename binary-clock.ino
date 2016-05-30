@@ -5,8 +5,8 @@
  */
 
 //initial time, put local time here
-int hours = 11;
-int minutes = 06;
+int hours = 18;
+int minutes = 24;
 
 char visibleHours[256];
 char visibleMinutes[256];
@@ -43,6 +43,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  digitalWrite(2-13, HIGH);
 
   to_binary(hours, visibleHours);
   //Serial.print(visibleHours);
@@ -142,7 +143,9 @@ void to_binary(int x, char* rev) {
     n--;
   }
   rev[5] = '\0';
-  
+
+  if (hours >= 16)
+    rev[0] = '1';
   if (hours <= 15) {
     rev[0] = '0';
     rev[1] = '1';

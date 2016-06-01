@@ -5,8 +5,8 @@
  */
 
 //initial time, put local time here
-int hours = 18;
-int minutes = 24;
+int hours = 11;
+int minutes = 45;
 
 char visibleHours[256];
 char visibleMinutes[256];
@@ -106,7 +106,7 @@ void loop() {
     delay(60000);
     minutes = 0;
     hours++;
-    if (hours == 25)
+    if (hours == 24)
       hours = 0;
   }
   
